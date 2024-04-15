@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap');
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css) */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+h2{
+    font-family: 'playfair Display', serif;
+    font-size: 200%;
+    font-weight: 700%;
+    color: #2c2c2c;
+    text-decoration: underline;
+    text-align: center;
+    margin: 5px auto 15px;
+}
+h3{
+    font-family: 'playfair Display', serif;
+    font-size: 200%;
+    font-weight: 700%;
+    color: #2c2c2c;
+    text-decoration: underline;
+    text-align: center;
+    padding: 5px 450px 10px ;
+    margin: 50px auto 15px;
+}
+p{
+    font-family: 'raleway',serif;
+    font-size: 140%;
+    line-height: 180%;
+    text-align: justify;
+    color: #2c2c2c;
+    font-weight: 300;
+    margin: 20px 0 10px 0px;
+    /* text-align: center; */
+}
+
+img{
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.intro{
+    height: 100vh;
+    width: 100%;
+    margin: auto auto 15px auto;
+    background: url(https://th.bing.com/th/id/OIP.KoKk_vYZW-dFP-YSdRSOZwHaEo?w=265&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7) no-repeat 50% 50%;
+    background-size: cover;
+    display: table;
+    top: 0;
+}
+
+.intro .inner{
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    max-width: none;
+}
+
+.contaner{
+    max-width: 600px;
+    margin: auto;
+}
+h1{
+    font-family: 'playfair Display', serif;
+    font-size: 300%;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    padding: 2% 0 0 0;
+    text-shadow: 0px 0px 250pxx #000;
+}
+.contaner p{
+    color: #fff;
+}
+.inner{
+    max-width: 600px;
+    margin: auto;
+    font-size: 107%;
+    line-height: 1.6;
+    padding: 10px;
+}
+/* ------start nav-------- */
+nav{
+    float: left;
+    padding: 5% 5% 0 0;
+    height: 50px;
+}
+nav ul{
+    list-style: none;
+    float: left;
+}
+nav ul li{
+    font-family: 'Raleway', sans-serif;
+    font-size: 120%;
+}
+nav ul li a{
+    color: #ffffff;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    text-decoration: underline;
+}
+
+nav ul, nav:active ul{
+    display: none;
+    left: 45px;
+    top: 60px;
+    padding: 8px 0;
+    width: 20%;
+    z-index: 1000;
+}
+nav li{
+    width: 100%;
+    padding: 8px 0 10px 0;
+    margin: 0;
+}
+
+nav:hover ul{
+    display: block;
+    position: absolute;
+}
+#menu{
+    width: 30px;
+    height: 20px;
+    background-image: url(https://th.bing.com/th/id/OIP.YBa10aeHh2ekacDFVZj0gAHaHa?w=164&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7);
+   background-size: 30px 30px;
+    /* background: ("fa fa-instagram"); */
+    display: inline-block;
+    margin: 50px 0 0 50px;
+}
+
+nav ul, nav:active ul{
+    padding: 8px 0;
+    left: 23px;
+    top: 60px;
+    width: 20%;
+}
+
+/* -end nav --- */
+.left-col{
+    width: 60%;
+    float: left;
+    margin: 4% 50px 4% 0%;
+}
+
+.sidebar{
+    width: 26%;
+    float: left;
+    padding: 4%;
+    margin: 20px 0px 0 10px;
+}
+.one-third-port{
+    width: 29%;
+    padding: 2%;
+    float: left;
+    margin: 20px 20px 0 20px;
+}
+.one-third-port img{
+    width: 400px;
+    height: 300px;
+    margin: 1% 1% 2% 3%;
+}
+.one-third-port img:hover{
+    opacity: 6%;
+}
+.contact p{
+    text-align: center;
+    letter-spacing: 5px;
+}
+.contact a{
+    color: #2c2c2c;
+    text-decoration: none;
+}
+.break{
+    display: none;
+}
+.clearfix{
+    margin: 300px 0 10px 0;
+    clear: both;
+    height: 3%;
+}
+.parallex{
+    background: url(https://th.bing.com/th/id/OIP.gOtgnsIKMgwPbiRDFdj0SgHaE3?w=169&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7) repeat fixed 100%;
+
+}
+.parallex-inner{
+    padding-top: 17%;
+}
+.social{
+    list-style-type: none;
+    text-align: center;
+}
+.social li{
+    display: inline;
+}
+.social i{
+    font-size: 270%;
+    margin: 1% 5% 7% 4%;
+    color: #2c2c2c;
+}
+.social i:hover{
+    color: #606060;
+}
+footer.seccond{
+    background-color: black;
+    height: 60px;
+    width: 100%;
+}
+footer .second p{
+    color: #ffffff;
+    text-align: center;
+    padding: 5%;
+}
+
+@media screen and (max-width: 768px) {
+    menu-icon {
+        margin: 26px 0 0 26px;
+    }
+    .inner{
+        font-size: 120%;
+    }
+    .contact h1{
+        font-size: 180%;
+    }
+    p{
+        font-size: 120%;
+    }
+    h2{
+        font-size: 160%;
+    }
+    .left-col{
+        width: 96%;
+        margin: 0 0 3% 0;
+        padding: 0 2%;
+    }
+    .sidebar{
+        width: 96%;
+        margin: 0 auto;
+    }
+    img{
+        padding: 2%;
+    }
+    .one-third-port{
+        width: 96%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .break{
+        display: block;
+    }
+    .parallex{
+        display: none;
+    }
+    .social i{
+        font-size: 170%;
+    }
+}
+
+/* .menu ul{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background-color: rgba(38, 12, 205, 0.794);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.menu ul li{
+    margin: 10px 0;
+    padding: 0 10px;
+}
+.menu ul li a{
+    padding: 50px 0;
+    text-align: center;
+    color: white;
+} */

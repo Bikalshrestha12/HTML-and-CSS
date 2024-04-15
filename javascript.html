@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>images</title>
+    <!-- link css -->
+    <link rel="stylesheet" href="javascript.css">
+</head>
+<body>
+    <div class="gallery-wrap">
+        <img src="https://th.bing.com/th/id/R.beef74d74f573496d36afabf649cf8ff?rik=XG4bjFDGe9b5eg&riu=http%3a%2f%2ficons.iconseeker.com%2fpng%2ffullsize%2fcrystal-clear-actions%2fback-arrow.png&ehk=%2bBlvLUvULWwbl%2b6Pw60yVA1bwE7YW1%2f41BQ5hxmqZJs%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" id="backbtn" alt="">
+        <div class="gallery">
+            <div>
+                <span><img src="https://th.bing.com/th?id=OIP.1YM53mG10H_U25iPjop83QHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt=""></span>
+                <span><img src="https://th.bing.com/th?id=OIP.HxV79tFMPfBAIo0BBF-sOgHaEy&w=310&h=200&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt=""></span>
+                <span><img src="https://th.bing.com/th?id=OIP.cKTq4enAGO_Wg_Omp0ysngHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt=""></span>
+                <!-- <span><img src="https://th.bing.com/th?id=OIP.xung4mlBfvUR3RKzjnRY2AHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt=""></span> -->
+            </div>
+            <div>
+                <span><img src="https://th.bing.com/th?id=OIP.1YM53mG10H_U25iPjop83QHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt=""></span>
+                <span><img src="https://th.bing.com/th?id=OIP.HxV79tFMPfBAIo0BBF-sOgHaEy&w=310&h=200&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt=""></span>
+                <!-- <span><img src="https://th.bing.com/th?id=OIP.cKTq4enAGO_Wg_Omp0ysngHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt=""></span> -->
+                <span><img src="https://th.bing.com/th?id=OIP.xung4mlBfvUR3RKzjnRY2AHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt=""></span>
+            </div>
+        </div>
+        <img src="https://th.bing.com/th/id/R.0f20b91fdbb3ec571b6dc14cfa2be9e2?rik=CoyNTHX%2bNkVI5A&riu=http%3a%2f%2ffun4baby.com%2fabc%2fNextButton.png&ehk=N%2beC8cUyTujD5Az5htxKBVELKfG4JKcKl1T35pexlwk%3d&risl=&pid=ImgRaw&r=0" id="nextbtn" alt="">
+    </div>
+    <script>
+        let scrollcontainer = document.querySelector(".gallery")
+        let backbtn = document.getElementById("backbtn")
+        let nextbtn = document.getElementById("nextbtn")
+    
+        scrollContainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer.scrollLeft += evt.deltaY;
+        });
+        nextbtn.addEventListener("click", ()=>{
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft += 900;
+        });
+        backbtn.addEventListener("click", ()=>{
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft -= 900;
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.v-header{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.container{
+    max-width: 960px;
+    padding: 0 1rem 0 1rem;
+    margin: auto;
+    text-align: center;
+}
