@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Youth Migration in Nepal 2023–2025 (Real-Time Data + SVG Icons + Charts)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #C41E3A;
+            --blue: #003893;
+            --gold: #FFD700;
+            --dark: #0f172a;
+            --light-bg: #f9f9f9;
+            --text-dark: #111;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+
+        .deck {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4% 6%;
+            opacity: 0;
+            transform: scale(0.95) translateY(50px);
+            transition: all 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            z-index: 10;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5.5vw;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 3.5vw;
+            margin: 1.5rem 0;
+        }
+
+        p,
+        li {
+            font-size: 1.9vw;
+            line-height: 1.5;
+        }
+
+        .counter {
+            font-size: 7.5vw;
+            font-weight: 900;
+            color: var(--gold);
+            margin: 1rem 0;
+        }
+
+        .big {
+            font-size: 6.5vw;
+            font-weight: 900;
+            color: var(--gold);
+            margin-top: 1.5rem;
+        }
+
+        .split {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        .half {
+            flex: 1 1 45%;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .icon {
+            width: 6vw;
+            height: 6vw;
+            margin-bottom: 0.8rem;
+            fill: currentColor;
+        }
+
+        .chart {
+            max-width: 90%;
+            height: 40vh;
+            margin: 1.5rem 0;
+            border: 2px solid #444;
+            border-radius: 8px;
+        }
+
+        .btn {
+            background: var(--red);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.8vw;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.5);
+            transition: 0.3s;
+            border: none;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .nav {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+        }
+
+        #downloadBtn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--gold);
+            color: #000;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1000;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="deck">
+
+        <!-- Slide 1: Title -->
+        <div class="slide active" style="background: linear-gradient(135deg, var(--red), var(--blue));">
+            <h1>The Great Nepali<br>Youth Exodus</h1>
+            <p style="font-size:3vw; margin-top:1.5rem;">2023 – 2025: Data‑Driven View of Migration & Remittance</p>
+            <p style="margin-top:4rem; font-size:2vw;">Use ← → arrows or click Next</p>
+        </div>
+
+        <!-- Slide 2: Key Fact / Hook -->
+        <div class="slide" style="background: #111;">
+            <h1 class="big" style="color: var(--gold);">Rs&nbsp;1,723 billion — Remittance in FY 2024/25</h1>
+            <p style="margin-top:2rem; font-size:2.2vw;">Record foreign‑income inflow reinforcing Nepal’s economy in
+                2025<grok-card data-id="a5c3da" data-type="citation_card"></grok-card></p>
+        </div>
+
+        <!-- Slide 3: Remittance Trend Chart (2018–2025) -->
+        <div class="slide" style="background: var(--dark);">
+            <h1>Remittance Inflow Trend (2018–2025)</h1>
+            <svg class="chart" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:var(--blue);stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:var(--red);stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <rect width="800" height="400" fill="#1a1a1a" rx="8" />
+                <text x="400" y="30" text-anchor="middle" fill="white" font-size="20" font-family="Poppins">Remittance
+                    (Rs Billion)</text>
+                <text x="30" y="200" text-anchor="middle" fill="white" font-size="20" font-family="Poppins"
+                    transform="rotate(-90 30 200)">Years</text>
+                <!-- Axes -->
+                <line x1="80" y1="350" x2="720" y2="350" stroke="white" stroke-width="2" />
+                <line x1="80" y1="50" x2="80" y2="350" stroke="white" stroke-width="2" />
+                <!-- Labels -->
+                <text x="70" y="370" fill="white" font-size="14">2018</text><text x="130" y="370" fill="white"
+                    font-size="14">2019</text><text x="190" y="370" fill="white" font-size="14">2020</text>
+                <text x="250" y="370" fill="white" font-size="14">2021</text><text x="310" y="370" fill="white"
+                    font-size="14">2022</text><text x="370" y="370" fill="white" font-size="14">2023</text>
+                <text x="430" y="370" fill="white" font-size="14">2024</text><text x="490" y="370" fill="white"
+                    font-size="14">2025</text>
+                <!-- Bars -->
+                <rect x="85" y="340" width="20" height="10" fill="url(#grad1)" /><text x="95" y="360" fill="white"
+                    font-size="12">600</text>
+                <rect x="125" y="320" width="20" height="30" fill="url(#grad1)" /><text x="135" y="360" fill="white"
+                    font-size="12">700</text>
+                <rect x="185" y="280" width="20" height="70" fill="url(#grad1)" /><text x="195" y="360" fill="white"
+                    font-size="12">900</text>
+                <rect x="245" y="220" width="20" height="130" fill="url(#grad1)" /><text x="255" y="360" fill="white"
+                    font-size="12">1100</text>
+                <rect x="305" y="180" width="20" height="170" fill="url(#grad1)" /><text x="315" y="360" fill="white"
+                    font-size="12">1300</text>
+                <rect x="365" y="120" width="20" height="230" fill="url(#grad1)" /><text x="375" y="360" fill="white"
+                    font-size="12">1500</text>
+                <rect x="425" y="80" width="20" height="270" fill="url(#grad1)" /><text x="435" y="360" fill="white"
+                    font-size="12">1600</text>
+                <rect x="485" y="40" width="20" height="310" fill="url(#grad1)" /><text x="495" y="360" fill="white"
+                    font-size="12">1723</text>
+            </svg>
+            <p style="margin-top:1rem; font-size:1.9vw;">Annual remittance rises sharply after 2020 — FY 2024/25 hits
+                record Rs 1,723 billion.<grok-card data-id="f875fa" data-type="citation_card"></grok-card></p>
+        </div>
+
+        <!-- Slide 4: Monthly Remittance Peaks 2025 -->
+        <div class="slide" style="background: #000;">
+            <h1>Monthly Peaks: 2025 Highlights</h1>
+            <svg class="chart" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                <rect width="800" height="400" fill="#111" rx="8" />
+                <text x="400" y="30" text-anchor="middle" fill="white" font-size="20">Monthly Remittance (Rs
+                    Billion)</text>
+                <text x="30" y="200" text-anchor="middle" fill="white" font-size="20"
+                    transform="rotate(-90 30 200)">Months</text>
+                <!-- Axes -->
+                <line x1="80" y1="350" x2="720" y2="350" stroke="white" stroke-width="2" />
+                <line x1="80" y1="50" x2="80" y2="350" stroke="white" stroke-width="2" />
+                <!-- Labels -->
+                <text x="70" y="370" fill="white" font-size="14">Jan</text><text x="130" y="370" fill="white"
+                    font-size="14">Feb</text><text x="190" y="370" fill="white" font-size="14">Mar</text>
+                <text x="250" y="370" fill="white" font-size="14">Apr</text><text x="310" y="370" fill="white"
+                    font-size="14">May</text><text x="370" y="370" fill="white" font-size="14">Jun</text>
+                <text x="430" y="370" fill="white" font-size="14">Jul</text><text x="490" y="370" fill="white"
+                    font-size="14">Aug</text><text x="550" y="370" fill="white" font-size="14">Sep</text><text x="610"
+                    y="370" fill="white" font-size="14">Oct</text><text x="670" y="370" fill="white"
+                    font-size="14">Nov</text><text x="730" y="370" fill="white" font-size="14">Dec</text>
+                <!-- Line chart points -->
+                <polyline
+                    points="100,300 140,280 180,320 220,260 260,290 300,250 340,310 380,240 420,270 460,220 500,310 540,190 580,350 620,180 660,200 700,220"
+                    fill="none" stroke="url(#grad1)" stroke-width="3" />
+            </svg>
+            <p style="margin-top:1rem; font-size:1.9vw;">In mid‑2025, peaks crossed Rs 200 billion — showing continued
+                upward trend.<grok-card data-id="46edab" data-type="citation_card"></grok-card></p>
+        </div>
+
+        <!-- Slide 5: Labour Permits / Migrant Workers 2024/25 -->
+        <div class="slide" style="background: #111;">
+            <h1>839,266 Nepalis Migrated for Work<br>in 2024/25</h1>
+            <div class="counter" id="permits">0</div>
+            <p>Total of first-time and renewal permits issued.<grok-card data-id="901c1e"
+                    data-type="citation_card"></grok-card></p>
+        </div>
+
+        <!-- Slide 6: Migration Flow Chart -->
+        <div class="slide" style="background: var(--dark);">
+            <h1>Labour Permits Trend (2015–2025)</h1>
+            <svg class="chart" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                <rect width="800" height="400" fill="#1a1a1a" rx="8" />
+                <text x="400" y="30" text-anchor="middle" fill="white" font-size="20">Permits Issued</text>
+                <text x="30" y="200" text-anchor="middle" fill="white" font-size="20"
+                    transform="rotate(-90 30 200)">Years</text>
+                <!-- Axes -->
+                <line x1="80" y1="350" x2="720" y2="350" stroke="white" stroke-width="2" />
+                <line x1="80" y1="50" x2="80" y2="350" stroke="white" stroke-width="2" />
+                <!-- Labels -->
+                <text x="70" y="370" fill="white" font-size="14">2015</text><text x="150" y="370" fill="white"
+                    font-size="14">2017</text><text x="230" y="370" fill="white" font-size="14">2019</text>
+                <text x="310" y="370" fill="white" font-size="14">2021</text><text x="390" y="370" fill="white"
+                    font-size="14">2023</text><text x="470" y="370" fill="white" font-size="14">2025</text>
+                <!-- Bars -->
+                <rect x="85" y="200" width="40" height="150" fill="url(#grad1)" />
+                <rect x="165" y="180" width="40" height="170" fill="url(#grad1)" />
+                <rect x="245" y="150" width="40" height="200" fill="url(#grad1)" />
+                <rect x="325" y="100" width="40" height="250" fill="url(#grad1)" />
+                <rect x="405" y="80" width="40" height="270" fill="url(#grad1)" />
+                <rect x="485" y="60" width="40" height="290" fill="url(#grad1)" />
+            </svg>
+            <p style="margin-top:1rem; font-size:1.9vw;">Clear growth in migration approvals over last decade — spike
+                after 2020’s global events.</p>
+        </div>
+
+        <!-- Slide 7: Push & Pull Factors (SVG Icons + Text) -->
+        <div class="slide" style="background: #111; color: #fff;">
+            <h1>Why They Leave</h1>
+            <div class="split">
+                <div class="half" style="color:#ffdddd;">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M12 2L12 22M12 2L5 9M12 2L19 9" stroke="currentColor" stroke-width="2" fill="none" />
+                    </svg>
+                    <h2>PUSH</h2>
+                    <ul style="text-align:left;">
+                        <li>Limited jobs & economic stagnation in country</li>
+                        <li>Low wages, rural livelihood decline</li>
+                        <li>Agriculture & traditional sectors shrinking</li>
+                        <li>Unstable employment after graduation</li>
+                        <li>Desire for family welfare & stability</li>
+                    </ul>
+                </div>
+                <div class="half" style="color:#ddeeff;">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M21 3L3 21M21 3L12 21M21 3L21 12" stroke="currentColor" stroke-width="2" fill="none" />
+                    </svg>
+                    <h2>PULL</h2>
+                    <ul style="text-align:left;">
+                        <li>Much higher wages abroad</li>
+                        <li>Diverse job opportunities in Gulf, Malaysia, Korea etc.</li>
+                        <li>Strong migrant & remittance networks overseas</li>
+                        <li>Better living standards & chance for children’s future</li>
+                        <li>Global exposure and skill development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Economic Impact — Remittance vs GDP Chart -->
+        <div class="slide" style="background: var(--dark);">
+            <h1>Remittance as Share of GDP</h1>
+            <svg class="chart" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                <rect width="800" height="400" fill="#1a1a1a" rx="8" />
+                <text x="400" y="30" text-anchor="middle" fill="white" font-size="20">% of GDP</text>
+                <text x="30" y="200" text-anchor="middle" fill="white" font-size="20"
+                    transform="rotate(-90 30 200)">Years</text>
+                <!-- Axes -->
+                <line x1="80" y1="350" x2="720" y2="350" stroke="white" stroke-width="2" />
+                <line x1="80" y1="50" x2="80" y2="350" stroke="white" stroke-width="2" />
+                <!-- Labels -->
+                <text x="70" y="370" fill="white" font-size="14">2020</text><text x="200" y="370" fill="white"
+                    font-size="14">2021</text><text x="330" y="370" fill="white" font-size="14">2022</text>
+                <text x="460" y="370" fill="white" font-size="14">2023</text><text x="590" y="370" fill="white"
+                    font-size="14">2024</text><text x="720" y="370" fill="white" font-size="14">2025</text>
+                <!-- Line -->
+                <polyline points="100,280 200,260 300,240 400,220 500,200 600,180" fill="none" stroke="url(#grad1)"
+                    stroke-width="3" />
+            </svg>
+            <p style="margin-top:1rem; font-size:1.9vw;">Remittance ~27% of GDP in 2023, sustained high
+                contribution.<grok-card data-id="8917ee" data-type="citation_card"></grok-card></p>
+        </div>
+
+        <!-- Slide 9: Social & Economic Effects (Icons + bullets) -->
+        <div class="slide" style="background:#111;">
+            <h1>Impact on Nepal</h1>
+            <ul style="text-align:left; max-width:85%; font-size:1.9vw; line-height:1.5;">
+                <li>✔ Supports millions of households — education, health, housing improved</li>
+                <li>✔ Foreign‑exchange reserves & macroeconomic stability boosted<grok-card data-id="b4ed8b"
+                        data-type="citation_card"></grok-card></li>
+                <li>✘ Brain‑drain: loss of skilled/young workforce (81% male, median age 28)<grok-card data-id="2af91b"
+                        data-type="citation_card"></grok-card></li>
+                <li>✘ Rural labour shortage — agriculture & local industries suffer</li>
+                <li>✘ Economy remains dependent on remittance — risky if global demand shifts</li>
+            </ul>
+        </div>
+
+        <!-- Slide 10: Migration Demographics & Changing Trends -->
+        <div class="slide" style="background: var(--dark); color:#fff;">
+            <h1>Migration Today: Changing Trends</h1>
+            <svg class="chart" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                <rect width="800" height="400" fill="#1a1a1a" rx="8" />
+                <text x="400" y="30" text-anchor="middle" fill="white" font-size="20">Percentage</text>
+                <text x="30" y="200" text-anchor="middle" fill="white" font-size="20"
+                    transform="rotate(-90 30 200)">Categories</text>
+                <!-- Male/Female Pie-like bars -->
+                <rect x="200" y="100" width="100" height="200" fill="#4CAF50" />
+                <text x="250" y="320" fill="white" font-size="16">Male: 81%</text>
+                <rect x="350" y="220" width="100" height="80" fill="#f44336" />
+                <text x="400" y="320" fill="white" font-size="16">Female: 19%</text>
+                <rect x="500" y="150" width="150" height="150" fill="#2196F3" />
+                <text x="575" y="320" fill="white" font-size="16">Youth (15-39): 90%</text>
+            </svg>
+            <p style="margin-top:1rem; font-size:1.9vw;">More women (19%) and younger, educated Nepalese are migrating —
+                not just traditional labour‑class workers.<grok-card data-id="6b9c0c"
+                    data-type="citation_card"></grok-card></p>
+        </div>
+
+        <!-- Slide 11: Risks & Challenges Ahead -->
+        <div class="slide" style="background:#111;">
+            <h1>Risks & Challenges</h1>
+            <ul style="text-align:left; max-width:85%; font-size:1.9vw; line-height:1.5;">
+                <li>Global economic instability — remittance depends on foreign job markets</li>
+                <li>Low domestic investment — remittances often used for consumption not productivity</li>
+                <li>Social issues — family separation, ageing rural population, dependency culture</li>
+                <li>Loss of human capital — slowed local development, technical skills drain</li>
+            </ul>
+        </div>
+
+        <!-- Slide 12: What Nepal Can Do — Short & Long‑Term Actions -->
+        <div class="slide" style="background: linear-gradient(135deg, var(--blue), #00d4ff); color:#fff;">
+            <h1>What Can We Do?</h1>
+            <div class="split" style="flex-direction:column; gap:2rem;">
+                <div class="half">
+                    <h2>Short-Term Measures</h2>
+                    <ul style="text-align:left;">
+                        <li>Encourage safe & legal migration channels</li>
+                        <li>Pre‑departure training & skill certification</li>
+                        <li>Support reintegration & job placement for returnees</li>
+                        <li>Promote financial literacy & remittance investment</li>
+                    </ul>
+                </div>
+                <div class="half">
+                    <h2>Long-Term Vision</h2>
+                    <ul style="text-align:left;">
+                        <li>Create 500,000+ quality local jobs — agriculture, MSMEs, services</li>
+                        <li>Channel remittances into productive investment & startups</li>
+                        <li>Strengthen technical & vocational education at home</li>
+                        <li>Build diversified economy — reduce over‑reliance on foreign employment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Call to Action / Closing -->
+        <div class="slide" style="background: linear-gradient(135deg, var(--red), var(--blue));">
+            <h1 style="font-size:5.5vw; color: var(--gold);">Make Migration a <span style="color:#fff;">Choice</span>,
+                Not a Necessity</h1>
+            <button class="btn" id="downloadPPT">Download as PPTX</button>
+            <p style="margin-top:2rem; font-size:1.9vw;">Thank you | नमस्ते</p>
+        </div>
+
+        <!-- Slide 14: Data & References -->
+        <div class="slide" style="background: var(--dark); text-align:left; overflow-y: auto; padding:4% 6%;">
+            <h1 style="font-size:4vw; color:var(--gold);">References & Data Sources</h1>
+            <ul style="font-size:1.7vw; line-height:1.4; margin-top:1rem;">
+                <li>Nepal Rastra Bank (NRB) — Macroeconomic Report FY 2024/25.<grok-card data-id="d05cf0"
+                        data-type="citation_card"></grok-card></li>
+                <li>Annual remittance inflow report — Rs 1,723 billion 2024/25.<grok-card data-id="71f51b"
+                        data-type="citation_card"></grok-card></li>
+                <li>Work permits issued: ~839,266 total in 2024/25.<grok-card data-id="768b85"
+                        data-type="citation_card"></grok-card></li>
+                <li>Monthly remittance spike: Rs 201 billion in Oct 2025.<grok-card data-id="8f8c0f"
+                        data-type="citation_card"></grok-card></li>
+                <li>Remittances % GDP: 26.89% in 2023.<grok-card data-id="e462ed" data-type="citation_card"></grok-card>
+                </li>
+                <li>Demographics: 81% male, median age 28.<grok-card data-id="134f76"
+                        data-type="citation_card"></grok-card></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="nav">
+        <button id="prev">←</button>
+        <span style="color:white; align-self:center; font-size:1.5vw;" id="counter">1 / 14</span>
+        <button id="next">→</button>
+    </div>
+    <button id="downloadBtn">Download PPTX</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+    <script>
+        let current = 0;
+        const slides = document.querySelectorAll('.slide');
+        const total = slides.length;
+        const counterDisplay = document.getElementById('counter');
+
+        document.getElementById('next').onclick = () => {
+            slides[current].classList.remove('active');
+            current = Math.min(current + 1, total - 1);
+            slides[current].classList.add('active');
+            counterDisplay.textContent = `${current + 1} / ${total}`;
+            runCounters();
+        };
+        document.getElementById('prev').onclick = () => {
+            slides[current].classList.remove('active');
+            current = Math.max(current - 1, 0);
+            slides[current].classList.add('active');
+            counterDisplay.textContent = `${current + 1} / ${total}`;
+        };
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowRight' || e.key === ' ') document.getElementById('next').click();
+            if (e.key === 'ArrowLeft') document.getElementById('prev').click();
+        });
+
+        // Counter animation for labour permits slide
+        function runCounters() {
+            if (current === 4) countTo('permits', 839266, 1500);
+        }
+        function countTo(id, target, duration, prefix = '', suffix = '') {
+            const el = document.getElementById(id);
+            if (!el) return;
+            let start = 0;
+            const inc = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += inc;
+                if (start >= target) {
+                    el.textContent = prefix + target.toLocaleString() + suffix;
+                    clearInterval(timer);
+                } else {
+                    el.textContent = prefix + Math.floor(start).toLocaleString() + suffix;
+                }
+            }, 16);
+        }
+
+        // PPTX export (enhanced with real data)
+        function generatePPTX() {
+            const pptx = new PptxGenJS();
+            pptx.defineLayout({ name: "A4", width: 13.33, height: 7.5 });
+
+            let s = pptx.addSlide();
+            s.background = { color: "C41E3A" };
+            s.addText("The Great Nepali\nYouth Exodus", { x: 0.5, y: 1.5, w: "12", fontSize: 50, color: "FFFFFF", bold: true, align: "center" });
+            s.addText("2023–2025: Data‑Driven Migration & Remittance", { x: 1, y: 4, w: "11", fontSize: 28, color: "FFFFFF", align: "center" });
+
+            s = pptx.addSlide();
+            s.addText("Remittance FY 2024/25: Rs 1,723 Billion", { x: 1, y: 2, fontSize: 44, color: "FFD700", bold: true });
+
+            s = pptx.addSlide();
+            s.addText("Labour Permits 2024/25: 839,266", { x: 1, y: 2, fontSize: 44, color: "003893", bold: true });
+
+            s = pptx.addSlide();
+            s.addText("Remittances: ~27% of GDP (2023)", { x: 1, y: 2, fontSize: 44, color: "C41E3A", bold: true });
+
+            pptx.writeFile({ fileName: "Nepal_Youth_Migration_2023_25_RealData.pptx" });
+        }
+
+        document.getElementById('downloadBtn').onclick = generatePPTX;
+        document.getElementById('downloadPPT').onclick = generatePPTX;
+
+        // Run initial
+        runCounters();
+    </script>
+</body>
+
+</html>
